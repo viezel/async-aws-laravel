@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7f9aea9a43c7e09ae2bcf6bde5f2cdde",
+    "content-hash": "ced6cc1cce4ecd2327c68d323008aec2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -59,88 +59,373 @@
             "time": "2019-12-24T22:41:47+00:00"
         },
         {
-            "name": "aws/aws-sdk-php",
-            "version": "3.137.5",
+            "name": "async-aws/core",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "b3309075ec2a2c695c33d8e21c07b3d5c10cdb9a"
+                "url": "https://github.com/async-aws/core.git",
+                "reference": "b12f69c0acb6a0abdf6f0e26cc0c5a480f6a7b91"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/b3309075ec2a2c695c33d8e21c07b3d5c10cdb9a",
-                "reference": "b3309075ec2a2c695c33d8e21c07b3d5c10cdb9a",
+                "url": "https://api.github.com/repos/async-aws/core/zipball/b12f69c0acb6a0abdf6f0e26cc0c5a480f6a7b91",
+                "reference": "b12f69c0acb6a0abdf6f0e26cc0c5a480f6a7b91",
                 "shasum": ""
             },
             "require": {
+                "ext-hash": "*",
                 "ext-json": "*",
-                "ext-pcre": "*",
                 "ext-simplexml": "*",
-                "guzzlehttp/guzzle": "^5.3.3|^6.2.1|^7.0",
-                "guzzlehttp/promises": "^1.0",
-                "guzzlehttp/psr7": "^1.4.1",
-                "mtdowling/jmespath.php": "^2.5",
-                "php": ">=5.5"
+                "php": "^7.2.5",
+                "psr/log": "~1.0",
+                "symfony/http-client": "^4.4 || ^5.0",
+                "symfony/http-client-contracts": "^1.1.8 || ^2.0",
+                "symfony/service-contracts": "^1.0 || ^2.0"
             },
-            "require-dev": {
-                "andrewsville/php-token-reflection": "^1.4",
-                "aws/aws-php-sns-message-validator": "~1.0",
-                "behat/behat": "~3.0",
-                "doctrine/cache": "~1.4",
-                "ext-dom": "*",
-                "ext-openssl": "*",
-                "ext-pcntl": "*",
-                "ext-sockets": "*",
-                "nette/neon": "^2.3",
-                "phpunit/phpunit": "^4.8.35|^5.4.3",
-                "psr/cache": "^1.0",
-                "psr/simple-cache": "^1.0",
-                "sebastian/comparator": "^1.2.3"
-            },
-            "suggest": {
-                "aws/aws-php-sns-message-validator": "To validate incoming SNS notifications",
-                "doctrine/cache": "To use the DoctrineCacheAdapter",
-                "ext-curl": "To send requests using cURL",
-                "ext-openssl": "Allows working with CloudFront private distributions and verifying received SNS messages",
-                "ext-sockets": "To use client-side monitoring"
+            "conflict": {
+                "async-aws/s3": "<1.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Aws\\": "src/"
-                },
-                "files": [
-                    "src/functions.php"
-                ]
+                    "AsyncAws\\Core\\": "src"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "Apache-2.0"
+                "MIT"
+            ],
+            "description": "Core package to integrate with AWS. This is a lightweight AWS SDK provider by AsyncAws.",
+            "keywords": [
+                "amazon",
+                "async-aws",
+                "aws",
+                "sdk",
+                "sts"
+            ],
+            "time": "2020-05-07T21:27:54+00:00"
+        },
+        {
+            "name": "async-aws/flysystem-s3",
+            "version": "0.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/async-aws/flysystem-s3.git",
+                "reference": "131b9325f65d0fda45515d5f4f6f283398fcc3e0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/async-aws/flysystem-s3/zipball/131b9325f65d0fda45515d5f4f6f283398fcc3e0",
+                "reference": "131b9325f65d0fda45515d5f4f6f283398fcc3e0",
+                "shasum": ""
+            },
+            "require": {
+                "async-aws/core": "^1.0",
+                "async-aws/s3": "^1.0",
+                "league/flysystem": "^1.0.65 || ^2.0.0-alpha.2",
+                "league/mime-type-detection": "^1.0",
+                "php": "^7.2.5"
+            },
+            "require-dev": {
+                "league/flysystem-adapter-test-utilities": "2.x-dev"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AsyncAws\\Flysystem\\S3\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
             ],
             "authors": [
                 {
-                    "name": "Amazon Web Services",
-                    "homepage": "http://aws.amazon.com"
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com"
                 }
             ],
-            "description": "AWS SDK for PHP - Use Amazon Web Services in your PHP project",
-            "homepage": "http://aws.amazon.com/sdkforphp",
+            "description": "Flysystem S3 adapter",
+            "keywords": [
+                "Flysystem",
+                "aws",
+                "filesystem",
+                "s3"
+            ],
+            "time": "2020-05-03T09:57:28+00:00"
+        },
+        {
+            "name": "async-aws/illuminate-filesystem",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/async-aws/illuminate-filesystem.git",
+                "reference": "4151d7296a1891dd1e2d6174e937a57557e9e9d0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/async-aws/illuminate-filesystem/zipball/4151d7296a1891dd1e2d6174e937a57557e9e9d0",
+                "reference": "4151d7296a1891dd1e2d6174e937a57557e9e9d0",
+                "shasum": ""
+            },
+            "require": {
+                "async-aws/core": "^1.0",
+                "async-aws/flysystem-s3": "^0.3.3",
+                "ext-json": "*",
+                "illuminate/filesystem": "^6.18.13 || ^7.10",
+                "php": "^7.2.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AsyncAws\\Illuminate\\Filesystem\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "AsyncAws integration for Illuminate Filesystem.",
+            "keywords": [
+                "async-aws",
+                "aws",
+                "filesystem",
+                "illuminate"
+            ],
+            "time": "2020-05-07T13:15:16+00:00"
+        },
+        {
+            "name": "async-aws/illuminate-mail",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/async-aws/illuminate-mail.git",
+                "reference": "63d4d1b74c8e5e32bcc383a9b9b09817f35f3e38"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/async-aws/illuminate-mail/zipball/63d4d1b74c8e5e32bcc383a9b9b09817f35f3e38",
+                "reference": "63d4d1b74c8e5e32bcc383a9b9b09817f35f3e38",
+                "shasum": ""
+            },
+            "require": {
+                "async-aws/ses": "^1.0",
+                "illuminate/mail": "^6.18.13 || ^7.10",
+                "php": "^7.2.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AsyncAws\\Illuminate\\Mail\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "AsyncAws integration for Illuminate Mail.",
+            "keywords": [
+                "async-aws",
+                "aws",
+                "illuminate",
+                "mail",
+                "ses"
+            ],
+            "time": "2020-05-07T13:21:51+00:00"
+        },
+        {
+            "name": "async-aws/illuminate-queue",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/async-aws/illuminate-queue.git",
+                "reference": "fb0179f227aafec0cb6f135d3196ed7d1117b0d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/async-aws/illuminate-queue/zipball/fb0179f227aafec0cb6f135d3196ed7d1117b0d3",
+                "reference": "fb0179f227aafec0cb6f135d3196ed7d1117b0d3",
+                "shasum": ""
+            },
+            "require": {
+                "async-aws/sqs": "^1.0",
+                "illuminate/queue": "^6.18.11 || ^7.10",
+                "php": "^7.2.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AsyncAws\\Illuminate\\Queue\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "AsyncAws integration for Illuminate Queue.",
+            "keywords": [
+                "async-aws",
+                "aws",
+                "illuminate",
+                "laravel",
+                "queue",
+                "sqs"
+            ],
+            "time": "2020-05-07T09:32:29+00:00"
+        },
+        {
+            "name": "async-aws/s3",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/async-aws/s3.git",
+                "reference": "fcf78eb936632d66215c6b8019c6c71ee224454a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/async-aws/s3/zipball/fcf78eb936632d66215c6b8019c6c71ee224454a",
+                "reference": "fcf78eb936632d66215c6b8019c6c71ee224454a",
+                "shasum": ""
+            },
+            "require": {
+                "async-aws/core": "^1.0",
+                "ext-dom": "*",
+                "ext-filter": "*",
+                "ext-hash": "*",
+                "ext-simplexml": "*",
+                "php": "^7.2.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AsyncAws\\S3\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "S3 client, part of the AWS SDK provided by AsyncAws.",
             "keywords": [
                 "amazon",
+                "async-aws",
                 "aws",
-                "cloud",
-                "dynamodb",
-                "ec2",
-                "glacier",
                 "s3",
                 "sdk"
             ],
-            "time": "2020-05-07T18:16:43+00:00"
+            "time": "2020-05-07T21:27:54+00:00"
+        },
+        {
+            "name": "async-aws/ses",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/async-aws/ses.git",
+                "reference": "b77da92daadf3c0c5fd285ce98ea82423ae87f30"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/async-aws/ses/zipball/b77da92daadf3c0c5fd285ce98ea82423ae87f30",
+                "reference": "b77da92daadf3c0c5fd285ce98ea82423ae87f30",
+                "shasum": ""
+            },
+            "require": {
+                "async-aws/core": "^1.0",
+                "ext-json": "*",
+                "php": "^7.2.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AsyncAws\\Ses\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "AsyncAws SES client.",
+            "keywords": [
+                "aws",
+                "ses"
+            ],
+            "time": "2020-05-03T09:33:38+00:00"
+        },
+        {
+            "name": "async-aws/sqs",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/async-aws/sqs.git",
+                "reference": "ead35cd44de51a85ce48570f02bb12ad527724ad"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/async-aws/sqs/zipball/ead35cd44de51a85ce48570f02bb12ad527724ad",
+                "reference": "ead35cd44de51a85ce48570f02bb12ad527724ad",
+                "shasum": ""
+            },
+            "require": {
+                "async-aws/core": "^1.0",
+                "ext-simplexml": "*",
+                "php": "^7.2.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AsyncAws\\Sqs\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "AsyncAws SQS client.",
+            "keywords": [
+                "aws",
+                "sqs"
+            ],
+            "time": "2020-05-03T09:33:38+00:00"
         },
         {
             "name": "brick/math",
@@ -1148,37 +1433,31 @@
             "time": "2020-04-16T13:21:26+00:00"
         },
         {
-            "name": "league/flysystem-aws-s3-v3",
-            "version": "1.0.24",
+            "name": "league/mime-type-detection",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/thephpleague/flysystem-aws-s3-v3.git",
-                "reference": "4382036bde5dc926f9b8b337e5bdb15e5ec7b570"
+                "url": "https://github.com/thephpleague/mime-type-detection.git",
+                "reference": "521ff65678b30c9efab86462eba3bf9e0676f25b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem-aws-s3-v3/zipball/4382036bde5dc926f9b8b337e5bdb15e5ec7b570",
-                "reference": "4382036bde5dc926f9b8b337e5bdb15e5ec7b570",
+                "url": "https://api.github.com/repos/thephpleague/mime-type-detection/zipball/521ff65678b30c9efab86462eba3bf9e0676f25b",
+                "reference": "521ff65678b30c9efab86462eba3bf9e0676f25b",
                 "shasum": ""
             },
             "require": {
-                "aws/aws-sdk-php": "^3.0.0",
-                "league/flysystem": "^1.0.40",
-                "php": ">=5.5.0"
+                "ext-fileinfo": "*",
+                "php": "^7.2"
             },
             "require-dev": {
-                "henrikbjorn/phpspec-code-coverage": "~1.0.1",
-                "phpspec/phpspec": "^2.0.0"
+                "phpstan/phpstan": "^0.12.11",
+                "phpunit/phpunit": "^8.5"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
-                    "League\\Flysystem\\AwsS3v3\\": "src/"
+                    "League\\MimeTypeDetection\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1188,11 +1467,11 @@
             "authors": [
                 {
                     "name": "Frank de Jonge",
-                    "email": "info@frenky.net"
+                    "email": "info@frankdejonge.nl"
                 }
             ],
-            "description": "Flysystem adapter for the AWS S3 SDK v3.x",
-            "time": "2020-02-23T13:31:58+00:00"
+            "description": "Mime-type detection for Flysystem",
+            "time": "2020-04-04T15:43:58+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -1274,63 +1553,6 @@
                 "psr-3"
             ],
             "time": "2019-12-20T14:22:59+00:00"
-        },
-        {
-            "name": "mtdowling/jmespath.php",
-            "version": "2.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jmespath/jmespath.php.git",
-                "reference": "52168cb9472de06979613d365c7f1ab8798be895"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jmespath/jmespath.php/zipball/52168cb9472de06979613d365c7f1ab8798be895",
-                "reference": "52168cb9472de06979613d365c7f1ab8798be895",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0",
-                "symfony/polyfill-mbstring": "^1.4"
-            },
-            "require-dev": {
-                "composer/xdebug-handler": "^1.2",
-                "phpunit/phpunit": "^4.8.36|^7.5.15"
-            },
-            "bin": [
-                "bin/jp.php"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.5-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "JmesPath\\": "src/"
-                },
-                "files": [
-                    "src/JmesPath.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Michael Dowling",
-                    "email": "mtdowling@gmail.com",
-                    "homepage": "https://github.com/mtdowling"
-                }
-            ],
-            "description": "Declaratively specify how to extract elements from a JSON document",
-            "keywords": [
-                "json",
-                "jsonpath"
-            ],
-            "time": "2019-12-30T18:03:34+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -2488,6 +2710,131 @@
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
             "time": "2020-03-27T16:56:45+00:00"
+        },
+        {
+            "name": "symfony/http-client",
+            "version": "v5.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/http-client.git",
+                "reference": "93b41572fbb3b8dd11d4f6f0434bbbbacd8619ab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/http-client/zipball/93b41572fbb3b8dd11d4f6f0434bbbbacd8619ab",
+                "reference": "93b41572fbb3b8dd11d4f6f0434bbbbacd8619ab",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2.5",
+                "psr/log": "^1.0",
+                "symfony/http-client-contracts": "^1.1.8|^2",
+                "symfony/polyfill-php73": "^1.11",
+                "symfony/service-contracts": "^1.0|^2"
+            },
+            "provide": {
+                "php-http/async-client-implementation": "*",
+                "php-http/client-implementation": "*",
+                "psr/http-client-implementation": "1.0",
+                "symfony/http-client-implementation": "1.1"
+            },
+            "require-dev": {
+                "guzzlehttp/promises": "^1.3.1",
+                "nyholm/psr7": "^1.0",
+                "php-http/httplug": "^1.0|^2.0",
+                "psr/http-client": "^1.0",
+                "symfony/dependency-injection": "^4.4|^5.0",
+                "symfony/http-kernel": "^4.4|^5.0",
+                "symfony/process": "^4.4|^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\HttpClient\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony HttpClient component",
+            "homepage": "https://symfony.com",
+            "time": "2020-04-12T16:45:47+00:00"
+        },
+        {
+            "name": "symfony/http-client-contracts",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/http-client-contracts.git",
+                "reference": "378868b61b85c5cac6822d4f84e26999c9f2e881"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/http-client-contracts/zipball/378868b61b85c5cac6822d4f84e26999c9f2e881",
+                "reference": "378868b61b85c5cac6822d4f84e26999c9f2e881",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2.5"
+            },
+            "suggest": {
+                "symfony/http-client-implementation": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Contracts\\HttpClient\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Generic abstractions related to HTTP clients",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "abstractions",
+                "contracts",
+                "decoupling",
+                "interfaces",
+                "interoperability",
+                "standards"
+            ],
+            "time": "2019-11-26T23:25:11+00:00"
         },
         {
             "name": "symfony/http-foundation",
@@ -5600,7 +5947,11 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "async-aws/illuminate-filesystem": 20,
+        "async-aws/illuminate-mail": 20,
+        "async-aws/illuminate-queue": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

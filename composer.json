@@ -9,12 +9,15 @@
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
+        "async-aws/flysystem-s3": "^0.3.3",
+        "async-aws/illuminate-filesystem": "^0.1.0@dev",
+        "async-aws/illuminate-mail": "^0.1.0@dev",
+        "async-aws/illuminate-queue": "^0.1.0@dev",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
-        "laravel/tinker": "^2.0",
-        "league/flysystem-aws-s3-v3": "^1.0"
+        "laravel/tinker": "^2.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
