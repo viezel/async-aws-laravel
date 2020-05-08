@@ -45,7 +45,9 @@ return [
         ],
 
         'ses' => [
-            'transport' => 'ses',
+            'transport' => 'async-aws-ses',
+            'key' => env('AWS_ACCESS_KEY_ID'),
+            'secret' => env('AWS_SECRET_ACCESS_KEY'),
         ],
 
         'mailgun' => [

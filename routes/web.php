@@ -15,6 +15,11 @@ Route::get('/file-exists', function () {
     return $result ? "File exists" : "File not found";
 });
 
+Route::get('/file-delete', function () {
+    $result =  Storage::disk('s3')->delete('test/img.jpeg');
+    return $result ? "File exists" : "File not found";
+});
+
 Route::get('/mail', function () {
     Mail::to('my@email.com')->send(new \App\Mail\TestMail());
     return 'mail sent';

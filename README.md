@@ -11,6 +11,7 @@
 
 - http://127.0.0.1:8000/file-upload
 - http://127.0.0.1:8000/file-exists
+- http://127.0.0.1:8000/file-delete
 - http://127.0.0.1:8000/queue
 - http://127.0.0.1:8000/mail
 - http://127.0.0.1:8000/mail
