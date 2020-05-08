@@ -175,6 +175,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // AWS ASYNC
+        App\Providers\AsyncQueueProvider::class,
+        App\Providers\AsyncMailProvider::class,
+        App\Providers\AsyncFilesystemProvider::class,
+
     ],
 
     /*
