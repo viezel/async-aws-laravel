@@ -176,9 +176,9 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         // AWS ASYNC
-        App\Providers\AsyncQueueProvider::class,
-        App\Providers\AsyncMailProvider::class,
-        App\Providers\AsyncFilesystemProvider::class,
+        AsyncAws\Illuminate\Filesystem\ServiceProvider::class,
+        AsyncAws\Illuminate\Queue\ServiceProvider::class,
+        AsyncAws\Illuminate\Mail\ServiceProvider::class,
 
     ],
 
