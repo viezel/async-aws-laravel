@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.2.5",
         "async-aws/flysystem-s3": "^0.3.3",
+        "async-aws/illuminate-cache": "^0.1.0@dev",
         "async-aws/illuminate-filesystem": "^0.1.0@dev",
         "async-aws/illuminate-mail": "^0.1.0@dev",
         "async-aws/illuminate-queue": "^0.1.0@dev",

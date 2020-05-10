@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "85c55b180c7a2763790037e9d7d7907a",
+    "content-hash": "60ce7841908f9dcce56725c5aee9b32f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -111,6 +111,48 @@
             "time": "2020-05-07T21:27:54+00:00"
         },
         {
+            "name": "async-aws/dynamo-db",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/async-aws/dynamo-db.git",
+                "reference": "feb84a83967ce85fab6eb46fc0b0c83d019e67d5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/async-aws/dynamo-db/zipball/feb84a83967ce85fab6eb46fc0b0c83d019e67d5",
+                "reference": "feb84a83967ce85fab6eb46fc0b0c83d019e67d5",
+                "shasum": ""
+            },
+            "require": {
+                "async-aws/core": "^1.0",
+                "ext-filter": "*",
+                "ext-json": "*",
+                "php": "^7.2.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AsyncAws\\DynamoDb\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "AsyncAws DynamoDb client.",
+            "keywords": [
+                "aws",
+                "dynamo-db"
+            ],
+            "time": "2020-05-03T09:18:49+00:00"
+        },
+        {
             "name": "async-aws/flysystem-s3",
             "version": "0.3.3",
             "source": {
@@ -163,6 +205,56 @@
                 "s3"
             ],
             "time": "2020-05-03T09:57:28+00:00"
+        },
+        {
+            "name": "async-aws/illuminate-cache",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/async-aws/illuminate-cache.git",
+                "reference": "def12488f68e9310d0c08f3deebf96607a2fbd38"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/async-aws/illuminate-cache/zipball/def12488f68e9310d0c08f3deebf96607a2fbd38",
+                "reference": "def12488f68e9310d0c08f3deebf96607a2fbd38",
+                "shasum": ""
+            },
+            "require": {
+                "async-aws/dynamo-db": "^0.2",
+                "ext-json": "*",
+                "illuminate/cache": "^6.18.13 || ^7.10",
+                "illuminate/support": "^6.18.13 || ^7.10",
+                "php": "^7.2.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "AsyncAws\\Illuminate\\Cache\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AsyncAws\\Illuminate\\Cache\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "AsyncAws integration for Illuminate Cache.",
+            "keywords": [
+                "async-aws",
+                "aws",
+                "cache",
+                "illuminate"
+            ],
+            "time": "2020-05-09T15:48:50+00:00"
         },
         {
             "name": "async-aws/illuminate-filesystem",
@@ -5983,6 +6075,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "async-aws/illuminate-cache": 20,
         "async-aws/illuminate-filesystem": 20,
         "async-aws/illuminate-mail": 20,
         "async-aws/illuminate-queue": 20
