@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aee1cb9b4229b59f3a61e5686bf27dd1",
+    "content-hash": "85c55b180c7a2763790037e9d7d7907a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -170,12 +170,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/async-aws/illuminate-filesystem.git",
-                "reference": "4151d7296a1891dd1e2d6174e937a57557e9e9d0"
+                "reference": "314ee31ad56a246ceb53217d86403f714549f365"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/async-aws/illuminate-filesystem/zipball/4151d7296a1891dd1e2d6174e937a57557e9e9d0",
-                "reference": "4151d7296a1891dd1e2d6174e937a57557e9e9d0",
+                "url": "https://api.github.com/repos/async-aws/illuminate-filesystem/zipball/314ee31ad56a246ceb53217d86403f714549f365",
+                "reference": "314ee31ad56a246ceb53217d86403f714549f365",
                 "shasum": ""
             },
             "require": {
@@ -183,12 +183,21 @@
                 "async-aws/flysystem-s3": "^0.3.3",
                 "ext-json": "*",
                 "illuminate/filesystem": "^6.18.13 || ^7.10",
+                "illuminate/support": "^6.18.13 || ^7.10",
                 "php": "^7.2.5"
+            },
+            "conflict": {
+                "league/flysystem": ">=2.0.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "0.1-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "AsyncAws\\Illuminate\\Filesystem\\ServiceProvider"
+                    ]
                 }
             },
             "autoload": {
@@ -207,7 +216,7 @@
                 "filesystem",
                 "illuminate"
             ],
-            "time": "2020-05-07T13:15:16+00:00"
+            "time": "2020-05-09T15:48:50+00:00"
         },
         {
             "name": "async-aws/illuminate-mail",
@@ -215,23 +224,29 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/async-aws/illuminate-mail.git",
-                "reference": "63d4d1b74c8e5e32bcc383a9b9b09817f35f3e38"
+                "reference": "37684a4f10b3f0c77f1239b23cdd2e1604c23e86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/async-aws/illuminate-mail/zipball/63d4d1b74c8e5e32bcc383a9b9b09817f35f3e38",
-                "reference": "63d4d1b74c8e5e32bcc383a9b9b09817f35f3e38",
+                "url": "https://api.github.com/repos/async-aws/illuminate-mail/zipball/37684a4f10b3f0c77f1239b23cdd2e1604c23e86",
+                "reference": "37684a4f10b3f0c77f1239b23cdd2e1604c23e86",
                 "shasum": ""
             },
             "require": {
                 "async-aws/ses": "^1.0",
                 "illuminate/mail": "^6.18.13 || ^7.10",
+                "illuminate/support": "^6.18.13 || ^7.10",
                 "php": "^7.2.5"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "0.1-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "AsyncAws\\Illuminate\\Mail\\ServiceProvider"
+                    ]
                 }
             },
             "autoload": {
@@ -251,7 +266,7 @@
                 "mail",
                 "ses"
             ],
-            "time": "2020-05-07T13:21:51+00:00"
+            "time": "2020-05-09T15:48:50+00:00"
         },
         {
             "name": "async-aws/illuminate-queue",
@@ -259,23 +274,29 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/async-aws/illuminate-queue.git",
-                "reference": "fb0179f227aafec0cb6f135d3196ed7d1117b0d3"
+                "reference": "af10009355b53bf4b5aba62e74b12169950e2bdc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/async-aws/illuminate-queue/zipball/fb0179f227aafec0cb6f135d3196ed7d1117b0d3",
-                "reference": "fb0179f227aafec0cb6f135d3196ed7d1117b0d3",
+                "url": "https://api.github.com/repos/async-aws/illuminate-queue/zipball/af10009355b53bf4b5aba62e74b12169950e2bdc",
+                "reference": "af10009355b53bf4b5aba62e74b12169950e2bdc",
                 "shasum": ""
             },
             "require": {
-                "async-aws/sqs": "^1.0",
+                "async-aws/sqs": "^1.1",
                 "illuminate/queue": "^6.18.11 || ^7.10",
+                "illuminate/support": "^6.18.13 || ^7.10",
                 "php": "^7.2.5"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "0.1-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "AsyncAws\\Illuminate\\Queue\\ServiceProvider"
+                    ]
                 }
             },
             "autoload": {
@@ -296,7 +317,7 @@
                 "queue",
                 "sqs"
             ],
-            "time": "2020-05-07T09:32:29+00:00"
+            "time": "2020-05-09T15:48:50+00:00"
         },
         {
             "name": "async-aws/s3",
@@ -388,16 +409,16 @@
         },
         {
             "name": "async-aws/sqs",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/async-aws/sqs.git",
-                "reference": "ead35cd44de51a85ce48570f02bb12ad527724ad"
+                "reference": "7c96038dcbf9a37cc441e6fb5001d8524e3f93c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/async-aws/sqs/zipball/ead35cd44de51a85ce48570f02bb12ad527724ad",
-                "reference": "ead35cd44de51a85ce48570f02bb12ad527724ad",
+                "url": "https://api.github.com/repos/async-aws/sqs/zipball/7c96038dcbf9a37cc441e6fb5001d8524e3f93c5",
+                "reference": "7c96038dcbf9a37cc441e6fb5001d8524e3f93c5",
                 "shasum": ""
             },
             "require": {
@@ -408,7 +429,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "1.1-dev"
                 }
             },
             "autoload": {
@@ -420,96 +441,15 @@
             "license": [
                 "MIT"
             ],
-            "description": "AsyncAws SQS client.",
-            "keywords": [
-                "aws",
-                "sqs"
-            ],
-            "time": "2020-05-03T09:33:38+00:00"
-        },
-        {
-            "name": "aws/aws-sdk-php",
-            "version": "3.137.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "24cdfb2d9538a2a30744708d75be1e75f302283b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/24cdfb2d9538a2a30744708d75be1e75f302283b",
-                "reference": "24cdfb2d9538a2a30744708d75be1e75f302283b",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "ext-pcre": "*",
-                "ext-simplexml": "*",
-                "guzzlehttp/guzzle": "^5.3.3|^6.2.1|^7.0",
-                "guzzlehttp/promises": "^1.0",
-                "guzzlehttp/psr7": "^1.4.1",
-                "mtdowling/jmespath.php": "^2.5",
-                "php": ">=5.5"
-            },
-            "require-dev": {
-                "andrewsville/php-token-reflection": "^1.4",
-                "aws/aws-php-sns-message-validator": "~1.0",
-                "behat/behat": "~3.0",
-                "doctrine/cache": "~1.4",
-                "ext-dom": "*",
-                "ext-openssl": "*",
-                "ext-pcntl": "*",
-                "ext-sockets": "*",
-                "nette/neon": "^2.3",
-                "phpunit/phpunit": "^4.8.35|^5.4.3",
-                "psr/cache": "^1.0",
-                "psr/simple-cache": "^1.0",
-                "sebastian/comparator": "^1.2.3"
-            },
-            "suggest": {
-                "aws/aws-php-sns-message-validator": "To validate incoming SNS notifications",
-                "doctrine/cache": "To use the DoctrineCacheAdapter",
-                "ext-curl": "To send requests using cURL",
-                "ext-openssl": "Allows working with CloudFront private distributions and verifying received SNS messages",
-                "ext-sockets": "To use client-side monitoring"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Aws\\": "src/"
-                },
-                "files": [
-                    "src/functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Amazon Web Services",
-                    "homepage": "http://aws.amazon.com"
-                }
-            ],
-            "description": "AWS SDK for PHP - Use Amazon Web Services in your PHP project",
-            "homepage": "http://aws.amazon.com/sdkforphp",
+            "description": "SQS client, part of the AWS SDK provided by AsyncAws.",
             "keywords": [
                 "amazon",
+                "async-aws",
                 "aws",
-                "cloud",
-                "dynamodb",
-                "ec2",
-                "glacier",
-                "s3",
-                "sdk"
+                "sdk",
+                "sqs"
             ],
-            "time": "2020-05-08T18:20:12+00:00"
+            "time": "2020-05-07T20:59:46+00:00"
         },
         {
             "name": "brick/math",
@@ -1648,63 +1588,6 @@
                 "psr-3"
             ],
             "time": "2019-12-20T14:22:59+00:00"
-        },
-        {
-            "name": "mtdowling/jmespath.php",
-            "version": "2.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jmespath/jmespath.php.git",
-                "reference": "52168cb9472de06979613d365c7f1ab8798be895"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jmespath/jmespath.php/zipball/52168cb9472de06979613d365c7f1ab8798be895",
-                "reference": "52168cb9472de06979613d365c7f1ab8798be895",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0",
-                "symfony/polyfill-mbstring": "^1.4"
-            },
-            "require-dev": {
-                "composer/xdebug-handler": "^1.2",
-                "phpunit/phpunit": "^4.8.36|^7.5.15"
-            },
-            "bin": [
-                "bin/jp.php"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.5-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "JmesPath\\": "src/"
-                },
-                "files": [
-                    "src/JmesPath.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Michael Dowling",
-                    "email": "mtdowling@gmail.com",
-                    "homepage": "https://github.com/mtdowling"
-                }
-            ],
-            "description": "Declaratively specify how to extract elements from a JSON document",
-            "keywords": [
-                "json",
-                "jsonpath"
-            ],
-            "time": "2019-12-30T18:03:34+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -3204,16 +3087,16 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.15.0",
+            "version": "v1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "4719fa9c18b0464d399f1a63bf624b42b6fa8d14"
+                "reference": "1aab00e39cebaef4d8652497f46c15c1b7e45294"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/4719fa9c18b0464d399f1a63bf624b42b6fa8d14",
-                "reference": "4719fa9c18b0464d399f1a63bf624b42b6fa8d14",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/1aab00e39cebaef4d8652497f46c15c1b7e45294",
+                "reference": "1aab00e39cebaef4d8652497f46c15c1b7e45294",
                 "shasum": ""
             },
             "require": {
@@ -3225,7 +3108,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15-dev"
+                    "dev-master": "1.16-dev"
                 }
             },
             "autoload": {
@@ -3258,20 +3141,20 @@
                 "polyfill",
                 "portable"
             ],
-            "time": "2020-02-27T09:26:54+00:00"
+            "time": "2020-05-08T16:50:20+00:00"
         },
         {
             "name": "symfony/polyfill-iconv",
-            "version": "v1.15.0",
+            "version": "v1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-iconv.git",
-                "reference": "ad6d62792bfbcfc385dd34b424d4fcf9712a32c8"
+                "reference": "d51debc1391a609c514f6f072dd59a61b461502a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-iconv/zipball/ad6d62792bfbcfc385dd34b424d4fcf9712a32c8",
-                "reference": "ad6d62792bfbcfc385dd34b424d4fcf9712a32c8",
+                "url": "https://api.github.com/repos/symfony/polyfill-iconv/zipball/d51debc1391a609c514f6f072dd59a61b461502a",
+                "reference": "d51debc1391a609c514f6f072dd59a61b461502a",
                 "shasum": ""
             },
             "require": {
@@ -3283,7 +3166,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15-dev"
+                    "dev-master": "1.16-dev"
                 }
             },
             "autoload": {
@@ -3317,20 +3200,20 @@
                 "portable",
                 "shim"
             ],
-            "time": "2020-03-09T19:04:49+00:00"
+            "time": "2020-05-08T16:50:20+00:00"
         },
         {
             "name": "symfony/polyfill-intl-idn",
-            "version": "v1.15.0",
+            "version": "v1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-idn.git",
-                "reference": "47bd6aa45beb1cd7c6a16b7d1810133b728bdfcf"
+                "reference": "ab0af41deab94ec8dceb3d1fb408bdd038eba4dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-idn/zipball/47bd6aa45beb1cd7c6a16b7d1810133b728bdfcf",
-                "reference": "47bd6aa45beb1cd7c6a16b7d1810133b728bdfcf",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-idn/zipball/ab0af41deab94ec8dceb3d1fb408bdd038eba4dc",
+                "reference": "ab0af41deab94ec8dceb3d1fb408bdd038eba4dc",
                 "shasum": ""
             },
             "require": {
@@ -3344,7 +3227,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15-dev"
+                    "dev-master": "1.16-dev"
                 }
             },
             "autoload": {
@@ -3379,20 +3262,20 @@
                 "portable",
                 "shim"
             ],
-            "time": "2020-03-09T19:04:49+00:00"
+            "time": "2020-05-08T16:50:20+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.15.0",
+            "version": "v1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "81ffd3a9c6d707be22e3012b827de1c9775fc5ac"
+                "reference": "a54881ec0ab3b2005c406aed0023c062879031e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/81ffd3a9c6d707be22e3012b827de1c9775fc5ac",
-                "reference": "81ffd3a9c6d707be22e3012b827de1c9775fc5ac",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/a54881ec0ab3b2005c406aed0023c062879031e7",
+                "reference": "a54881ec0ab3b2005c406aed0023c062879031e7",
                 "shasum": ""
             },
             "require": {
@@ -3404,7 +3287,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15-dev"
+                    "dev-master": "1.16-dev"
                 }
             },
             "autoload": {
@@ -3438,20 +3321,20 @@
                 "portable",
                 "shim"
             ],
-            "time": "2020-03-09T19:04:49+00:00"
+            "time": "2020-05-08T16:50:20+00:00"
         },
         {
             "name": "symfony/polyfill-php72",
-            "version": "v1.15.0",
+            "version": "v1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php72.git",
-                "reference": "37b0976c78b94856543260ce09b460a7bc852747"
+                "reference": "42fda6d7380e5c940d7f68341ccae89d5ab9963b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/37b0976c78b94856543260ce09b460a7bc852747",
-                "reference": "37b0976c78b94856543260ce09b460a7bc852747",
+                "url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/42fda6d7380e5c940d7f68341ccae89d5ab9963b",
+                "reference": "42fda6d7380e5c940d7f68341ccae89d5ab9963b",
                 "shasum": ""
             },
             "require": {
@@ -3460,7 +3343,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15-dev"
+                    "dev-master": "1.16-dev"
                 }
             },
             "autoload": {
@@ -3493,20 +3376,20 @@
                 "portable",
                 "shim"
             ],
-            "time": "2020-02-27T09:26:54+00:00"
+            "time": "2020-05-08T17:28:34+00:00"
         },
         {
             "name": "symfony/polyfill-php73",
-            "version": "v1.15.0",
+            "version": "v1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php73.git",
-                "reference": "0f27e9f464ea3da33cbe7ca3bdf4eb66def9d0f7"
+                "reference": "7e95fe59d12169fcf4041487e4bf34fca37ee0ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/0f27e9f464ea3da33cbe7ca3bdf4eb66def9d0f7",
-                "reference": "0f27e9f464ea3da33cbe7ca3bdf4eb66def9d0f7",
+                "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/7e95fe59d12169fcf4041487e4bf34fca37ee0ed",
+                "reference": "7e95fe59d12169fcf4041487e4bf34fca37ee0ed",
                 "shasum": ""
             },
             "require": {
@@ -3515,7 +3398,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15-dev"
+                    "dev-master": "1.16-dev"
                 }
             },
             "autoload": {
@@ -3551,7 +3434,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2020-02-27T09:26:54+00:00"
+            "time": "2020-05-02T14:56:09+00:00"
         },
         {
             "name": "symfony/process",

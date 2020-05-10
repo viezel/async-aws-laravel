@@ -25,7 +25,21 @@ Route::get('/mail', function () {
     return 'mail sent';
 });
 
+Route::get('/mail-s3-attachment', function () {
+    Mail::to('my@email.com')->send(new \App\Mail\TestMailAttachment());
+    return 'mail with attachment sent';
+});
+
+Route::get('/mail-queue', function () {
+    Mail::to('my@email.com')->queue(new \App\Mail\TestMailAttachment());
+    return 'mail queued. run "php artisan queue:work" to process it';
+});
+
 Route::get('/queue', function () {
+    return Queue::push(new \App\Jobs\CreateUserJob('John Doe', 'john@doe.com'));
+});
+
+Route::get('/queue-raw', function () {
     return Queue::pushRaw('hello queue');
 });
 
